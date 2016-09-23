@@ -13,40 +13,40 @@ import me.virizion.corpses.ConfigData;
 import me.virizion.corpses.Main;
 import me.virizion.corpses.nms.Corpses;
 import me.virizion.corpses.nms.nmsclasses.packetlisteners.PcktIn_v1_8_R1;
-import net.minecraft.server.v1_8_R1.BlockPosition;
-import net.minecraft.server.v1_8_R1.ChatMessage;
-import net.minecraft.server.v1_8_R1.DataWatcher;
-import net.minecraft.server.v1_8_R1.Entity;
-import net.minecraft.server.v1_8_R1.EntityHuman;
-import net.minecraft.server.v1_8_R1.EnumGamemode;
-import net.minecraft.server.v1_8_R1.EnumPlayerInfoAction;
-import net.minecraft.server.v1_8_R1.IChatBaseComponent;
-import net.minecraft.server.v1_8_R1.MathHelper;
-import net.minecraft.server.v1_8_R1.PacketPlayOutBed;
-import net.minecraft.server.v1_8_R1.PacketPlayOutEntityDestroy;
-import net.minecraft.server.v1_8_R1.PacketPlayOutNamedEntitySpawn;
-import net.minecraft.server.v1_8_R1.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_8_R1.PacketPlayOutRelEntityMove;
-import net.minecraft.server.v1_8_R1.PlayerConnection;
-import net.minecraft.server.v1_8_R1.PlayerInfoData;
+import net.minecraft.server.v1_10_R1.BlockPosition;
+import net.minecraft.server.v1_10_R1.ChatMessage;
+import net.minecraft.server.v1_10_R1.DataWatcher;
+import net.minecraft.server.v1_10_R1.Entity;
+import net.minecraft.server.v1_10_R1.EntityHuman;
+import net.minecraft.server.v1_10_R1.EnumGamemode;
+import net.minecraft.server.v1_10_R1.EnumPlayerInfoAction;
+import net.minecraft.server.v1_10_R1.IChatBaseComponent;
+import net.minecraft.server.v1_10_R1.MathHelper;
+import net.minecraft.server.v1_10_R1.PacketPlayOutBed;
+import net.minecraft.server.v1_10_R1.PacketPlayOutEntityDestroy;
+import net.minecraft.server.v1_10_R1.PacketPlayOutNamedEntitySpawn;
+import net.minecraft.server.v1_10_R1.PacketPlayOutPlayerInfo;
+import net.minecraft.server.v1_10_R1.PacketPlayOutRelEntityMove;
+import net.minecraft.server.v1_10_R1.PlayerConnection;
+import net.minecraft.server.v1_10_R1.PlayerInfoData;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.craftbukkit.v1_8_R1.CraftWorld;
-import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_10_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 import com.mojang.authlib.GameProfile;
 
-public class NMSCorpses_v1_8_R1 implements Corpses {
+public class NMSCorpses_v1_10_R1 implements Corpses {
 
 	private List<CorpseData> corpses;
 
-	public NMSCorpses_v1_8_R1() {
+	public NMSCorpses_v1_10_R1() {
 		corpses = new ArrayList<CorpseData>();
 		Bukkit.getServer().getScheduler()
 				.scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
@@ -510,7 +510,7 @@ public class NMSCorpses_v1_8_R1 implements Corpses {
 	}
 
 	public void registerPacketListener(Player p) {
-		PcktIn_v1_8_R1.registerListener(p);
+		PcktIn_v1_10_R1.registerListener(p);
 	}
 
 }
