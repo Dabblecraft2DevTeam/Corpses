@@ -9,19 +9,19 @@ import java.lang.reflect.Field;
 import me.virizion.corpses.ConfigData;
 import me.virizion.corpses.Main;
 import me.virizion.corpses.nms.Corpses.CorpseData;
-import net.minecraft.server.v1_8_R1.EnumEntityUseAction;
-import net.minecraft.server.v1_8_R1.NetworkManager;
-import net.minecraft.server.v1_8_R1.PacketPlayInUseEntity;
+import net.minecraft.server.v1_10_R1.EnumEntityUseAction;
+import net.minecraft.server.v1_10_R1.NetworkManager;
+import net.minecraft.server.v1_10_R1.PacketPlayInUseEntity;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
-public class PcktIn_v1_8_R1 extends ChannelInboundHandlerAdapter {
+public class PcktIn_v1_10_R1 extends ChannelInboundHandlerAdapter {
 
 	private Player p;
 
-	public PcktIn_v1_8_R1(Player p) {
+	public PcktIn_v1_10_R1(Player p) {
 		this.p = p;
 	}
 
@@ -69,7 +69,7 @@ public class PcktIn_v1_8_R1 extends ChannelInboundHandlerAdapter {
 			throw new NullPointerException("Couldn't get channel??");
 		}
 		c.pipeline().addBefore("packet_handler", "packet_in_listener",
-				new PcktIn_v1_8_R1(p));
+				new PcktIn_v1_10_R1(p));
 	}
 
 	public static final Channel getChannel(Player p) {
